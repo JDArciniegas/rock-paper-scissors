@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")({ sigint: true });
+
 // Rock paper scissors
 // create function to randomly select rock, paper, scissors
 
@@ -7,10 +9,8 @@ function getComputerChoice() {
   return choices[random];
 }
 
-console.log(getComputerChoice());
-
 // create function to pay a round computer vs player
-let playerSelection = "Paper"
+let playerSelection = "Rock";
 
 function playRound(playerChoice, computerChoice) {
   playerChoice = playerChoice.toLowerCase();
@@ -32,4 +32,3 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
-console.log(playRound(playerSelection, getComputerChoice()));

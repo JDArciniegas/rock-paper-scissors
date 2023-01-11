@@ -1,5 +1,3 @@
-const prompt = require("prompt-sync")({ sigint: true });
-
 // Rock paper scissors
 // create function to randomly select rock, paper, scissors
 

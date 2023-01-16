@@ -1,6 +1,7 @@
 // Rock paper scissors
+// variables for scores
+
 // create function to pay a round computer vs player
-// let playerSelection = "Rock";
 const playerOptions = document.querySelector("#options");
 playerOptions.addEventListener('click', (e) => {
   let playerSelection = e.target.getAttribute("value");

@@ -1,32 +1,44 @@
 // Rock paper scissors
-// create function to randomly select rock, paper, scissors
+// create function to pay a round computer vs player
+// let playerSelection = "Rock";
+const playerOptions = document.querySelector("#options");
+playerOptions.addEventListener('click', (e) => {
+  let playerSelection = e.target.getAttribute("value");
+  console.log(playRound(playerSelection, getComputerChoice()));
+})
 
+// create function to randomly select rock, paper, scissors
 function getComputerChoice() {
   const choices = ['Rock', 'Paper', 'Scissors'];
   const random = Math.floor(Math.random() * choices.length);
   return choices[random];
 }
 
-// create function to pay a round computer vs player
-let playerSelection = "Rock";
-
+// play round
 function playRound(playerChoice, computerChoice) {
+  let playerScore = 0;
+  let computerScore = 0;
   playerChoice = playerChoice.toLowerCase();
   computerChoice = computerChoice.toLowerCase();
-  if (playerChoice === computerChoice){
-    return "its a draw try again"
-  } else if (
+  if (
     (playerChoice === "rock") && (computerChoice === "scissors") ||
     (playerChoice === "paper") && (computerChoice === "rock") ||
     (playerChoice === "scissors") && (computerChoice === "paper")
   ) {
-    return `player wins with ${playerChoice} over ${computerChoice}`
-  } else if (
-    (playerChoice === "scissors") && (computerChoice === "rock") ||
-    (playerChoice === "rock") && (computerChoice === "paper") ||
-    (playerChoice === "paper") && (computerChoice === "scissors")
-  ) {
-    return `computer wins with ${computerChoice} over ${playerChoice}`
+    playerScore += playerScore + 1;
+    if (playerScore == 5) { result("Player", "Computer") };
+    result(playerChoice, computerChoice);
+  } else if (playerChoice === computerChoice) {
+    "its a draw try again"
+  } else {
+    computerScore += computerScore +1;
+    if (computerScore == 5) { result("Computer", "Player") };
   }
 }
+
+function result(winner, loser) {
+  // return `${winner} beats ${loser}!!`
+  console.log(winner + " beats " + loser);
+}
+
 

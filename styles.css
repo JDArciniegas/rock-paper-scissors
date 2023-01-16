@@ -1,0 +1,12 @@
+.icons{
+  height: 64px;
+}
+
+#options{
+  display: flex;
+}
+
+#options > li {
+  list-style: none;
+  margin: 20px;
+}

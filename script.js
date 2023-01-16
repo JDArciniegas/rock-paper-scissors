@@ -1,5 +1,8 @@
 // Rock paper scissors
 // variables for scores
+const pScore = document.querySelector('#player-score');
+const cScore = document.querySelector('#computer-score');
+const winner = document.querySelector('#winner');
 
 // create function to pay a round computer vs player
 const playerOptions = document.querySelector("#options");
@@ -27,19 +30,20 @@ function playRound(playerChoice, computerChoice) {
     (playerChoice === "scissors") && (computerChoice === "paper")
   ) {
     playerScore += playerScore + 1;
-    if (playerScore == 5) { result("Player", "Computer") };
+    pScore.textContent = playerScore;
+    if (playerScore == 5) { result("Player") };
     result(playerChoice, computerChoice);
   } else if (playerChoice === computerChoice) {
     "its a draw try again"
   } else {
-    computerScore += computerScore +1;
-    if (computerScore == 5) { result("Computer", "Player") };
+    computerScore += computerScore + 1;
+    cScore.textContent = computerScore;
+    if (computerScore == 5) { result("Computer") };
   }
 }
 
-function result(winner, loser) {
-  // return `${winner} beats ${loser}!!`
-  console.log(winner + " beats " + loser);
+function result(winner) {
+  return `${winner}`
 }
 
 

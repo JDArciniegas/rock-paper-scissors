@@ -18,10 +18,10 @@ function getComputerChoice() {
   return choices[random];
 }
 
+let playerScore = 0;
+let computerScore = 0;
 // play round
 function playRound(playerChoice, computerChoice) {
-  let playerScore = 0;
-  let computerScore = 0;
   playerChoice = playerChoice.toLowerCase();
   computerChoice = computerChoice.toLowerCase();
   if (
@@ -29,21 +29,13 @@ function playRound(playerChoice, computerChoice) {
     (playerChoice === "paper") && (computerChoice === "rock") ||
     (playerChoice === "scissors") && (computerChoice === "paper")
   ) {
-    playerScore += playerScore + 1;
-    pScore.textContent = playerScore;
-    if (playerScore == 5) { result("Player") };
-    result(playerChoice, computerChoice);
+    playerScore += 1;
   } else if (playerChoice === computerChoice) {
-    "its a draw try again"
+    console.log("its a draw try again");
   } else {
-    computerScore += computerScore + 1;
-    cScore.textContent = computerScore;
-    if (computerScore == 5) { result("Computer") };
+    computerScore += 1;
   }
 }
 
-function result(winner) {
-  return `${winner}`
-}
 
 

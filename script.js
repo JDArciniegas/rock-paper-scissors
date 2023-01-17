@@ -37,5 +37,7 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
-
+// when score increases output single game message for the winner
+// when winner score === 5
+// output message for full game winner
 

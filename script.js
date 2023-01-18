@@ -29,15 +29,26 @@ function playRound(playerChoice, computerChoice) {
     (playerChoice === "paper") && (computerChoice === "rock") ||
     (playerChoice === "scissors") && (computerChoice === "paper")
   ) {
-    playerScore += 1;
-  } else if (playerChoice === computerChoice) {
+    playerScore++;
+    pScore.textContent = playerScore;
+   } else if (playerChoice === computerChoice) {
     console.log("its a draw try again");
   } else {
-    computerScore += 1;
+    computerScore++;
+    cScore.textContent = computerScore;
   }
 }
 
 // when score increases output single game message for the winner
+function winBattle(winner, winChoice, loseChoice){
+  let message = `${winner} wins battle with ${winChoice} with ${loseChoice}`;
+  winner.textContent = message;
+}
+
 // when winner score === 5
 // output message for full game winner
+function winWar(winner){
+  return `${winner.toUpperCase()} wins the game!!!!!`
+}
+
 

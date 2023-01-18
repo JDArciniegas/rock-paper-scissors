@@ -4,6 +4,9 @@ const pScore = document.querySelector('#player-score');
 const cScore = document.querySelector('#computer-score');
 const winner = document.querySelector('#winner');
 
+// button for reset
+const btn = document.querySelector('#btn');
+
 // create function to pay a round computer vs player
 const playerOptions = document.querySelector("#options");
 playerOptions.addEventListener('click', (e) => {
@@ -39,10 +42,14 @@ function playRound(playerChoice, computerChoice) {
   }
   if ((playerScore === 5)){
     winWar("human")
+    reset()
   } else if (computerScore === 5) {
     winWar("computer")
+    reset()
   }
 }
+
+
 
 // when score increases output single game message for the winner
 function winBattle(winner, winChoice, loseChoice){
@@ -53,6 +60,15 @@ function winBattle(winner, winChoice, loseChoice){
 // output message for full game winner
 function winWar(winner){
   alert(`${winner.toUpperCase()} wins the game!!!!!`)
+}
+
+
+// reset variables
+function reset(){
+  playerScore = 0;
+  computerScore = 0;
+  pScore.textContent = ''
+  cScore.textContent = ''
 }
 
 

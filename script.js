@@ -4,6 +4,7 @@ const pScore = document.querySelector('#player-score');
 const cScore = document.querySelector('#computer-score');
 const battleResult = document.querySelector('#result');
 const gameWinner = document.querySelector('#winner');
+const options = document.querySelectorAll('.icons');
 
 // button for reset
 const restart = document.querySelector('#restart');
@@ -67,9 +68,10 @@ function winWar(winner){
 function reset(){
   playerScore = 0;
   computerScore = 0;
-  pScore.textContent = ''
-  cScore.textContent = ''
+  pScore.textContent = '0'
+  cScore.textContent = '0'
   gameWinner.textContent = ''
+  options.disable = false;
 }
 
 

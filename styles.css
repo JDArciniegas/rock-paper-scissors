@@ -58,3 +58,22 @@ header{
   justify-content: space-around;
   font-size: 24px;
 }
+
+#restart{
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  text-align: center;
+  background-color: var(--blue);
+  color: var(--white);
+  font-weight: 900;
+  padding: 10px 20px;
+  border-radius: 8px ;
+}
+
+.title{
+  width: 40%;
+  margin: auto;
+}
+
+
+

@@ -2,10 +2,11 @@
 // variables for scores
 const pScore = document.querySelector('#player-score');
 const cScore = document.querySelector('#computer-score');
-const winner = document.querySelector('#winner');
+const battleResult = document.querySelector('#result');
+const gameWinner = document.querySelector('#winner');
 
 // button for reset
-const btn = document.querySelector('#btn');
+const restart = document.querySelector('#restart');
 
 // create function to pay a round computer vs player
 const playerOptions = document.querySelector("#options");
@@ -34,22 +35,20 @@ function playRound(playerChoice, computerChoice) {
   ) {
     playerScore++;
     pScore.textContent = playerScore;
+    result.textContent = `${playerChoice} beats ${computerChoice}`
    } else if (playerChoice === computerChoice) {
-    console.log("its a draw try again");
+    result.textContent = "It's a draw play again"
   } else {
     computerScore++;
     cScore.textContent = computerScore;
+    result.textContent = `${computerChoice} beats ${playerChoice}`
   }
   if ((playerScore === 5)){
     winWar("human")
-    reset()
   } else if (computerScore === 5) {
     winWar("computer")
-    reset()
-  }
+    }
 }
-
-
 
 // when score increases output single game message for the winner
 function winBattle(winner, winChoice, loseChoice){
@@ -59,7 +58,8 @@ function winBattle(winner, winChoice, loseChoice){
 
 // output message for full game winner
 function winWar(winner){
-  alert(`${winner.toUpperCase()} wins the game!!!!!`)
+  result.textContent = ''
+  gameWinner.textContent = `${winner.toUpperCase()} wins the game!!!!!`;
 }
 
 
@@ -69,6 +69,7 @@ function reset(){
   computerScore = 0;
   pScore.textContent = ''
   cScore.textContent = ''
+  gameWinner.textContent = ''
 }
 
 

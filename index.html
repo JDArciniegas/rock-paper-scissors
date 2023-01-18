@@ -10,8 +10,11 @@
   <body>
     <header>
       <h1> Rock, Paper, Scissors </h1>
-      <h3>First to 5 wins!</h3>
-      <h2>WINS THE WAR</h2>
+      <div class="title">
+        <h3>First to 5 wins!</h3>
+        <h2>WINS THE WAR</h2>
+        <button id="restart" onclick="reset()">START OVER</button>
+      </div>
     </header>
     <ul id="options">
       <li id="rock">
@@ -27,12 +30,12 @@
 
     <div class="messages">
       <div class="score">
-        <p class="score-keeper">Player Score: <span id="player-score"></span></p>
-        <p class="score-keeper">Computer Score: <span id="computer-score"></span></p>
+        <p class="score-keeper">Player Score: <span id="player-score">0</span></p>
+        <p class="score-keeper">Computer Score: <span id="computer-score">0</span></p>
       </div>
-      <h3>Winner is <span id="winner"></span></h3>
+      <h2 id="result"></h2>
+      <h1 id="winner"></h1>
     </div>
-
 
     <script src="script.js"></script>
   </body>

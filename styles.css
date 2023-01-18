@@ -1,12 +1,60 @@
+/* variabels */
+:root {
+  /* colors */
+  --black: #201E1f;
+  --orange: #FF4000;
+  --blue: #1C7293;
+  --white: #FEF9EF;
+  --lightblue: #50B2C0;
+}
+
+body{
+  font-family: 'Cinzel', serif;
+  color: var(--black)
+}
+
 .icons{
-  height: 64px;
+  height: 120px;
+}
+
+#options>li:hover{
+  border: 2px solid var(--orange);
+  transition: border 0.25s;
 }
 
 #options{
   display: flex;
+  justify-content: space-evenly;
+  width:60%;
+  margin: auto;
+  border-bottom: 4px solid var(--lightblue);
+  border-top: 4px solid var(--lightblue);
 }
 
 #options > li {
   list-style: none;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 25px;
   margin: 20px;
+}
+
+header{
+  text-align: center;
+  margin-bottom: 100px;;
+}
+
+.messages{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.score{
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
 }

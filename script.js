@@ -37,6 +37,11 @@ function playRound(playerChoice, computerChoice) {
     computerScore++;
     cScore.textContent = computerScore;
   }
+  if ((playerScore === 5)){
+    winWar("human")
+  } else if (computerScore === 5) {
+    winWar("computer")
+  }
 }
 
 // when score increases output single game message for the winner
@@ -45,10 +50,9 @@ function winBattle(winner, winChoice, loseChoice){
   winner.textContent = message;
 }
 
-// when winner score === 5
 // output message for full game winner
 function winWar(winner){
-  return `${winner.toUpperCase()} wins the game!!!!!`
+  alert(`${winner.toUpperCase()} wins the game!!!!!`)
 }
 
 
